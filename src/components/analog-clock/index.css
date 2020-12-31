@@ -1,0 +1,51 @@
+text {
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+.container-analog {
+  height: 60vh;
+  width:100%;
+  fill: none;
+  stroke: #fc8c03;
+  stroke-width: 0.5;
+  stroke-linecap: round;
+  stroke-opacity: 0.5;
+}
+.signature {
+  font-size: 5%;
+  fill: #6f7a76;
+  stroke: none
+}
+.numbers {
+  font-size: 10%;
+  stroke-width: 0.1;
+  stroke: #024228;
+}
+.second {
+  fill: #ffffff;
+  stroke: #eb4034;
+  stroke-width: 0.1;
+  animation: rotate-hand 60s steps(60) infinite;
+}
+.minute {
+  stroke: #65eb34;
+  stroke-width: 0.3;
+  animation: rotate-hand 3600s steps(60) infinite;
+}
+.hour {
+  stroke: #3291a8;
+  stroke-width: 0.5;
+  animation: rotate-hand 43200s linear infinite;
+}
+
+@keyframes rotate-hand {
+  from {
+    transform-origin: 20px 20px;
+    transform: rotate(-90deg);
+  }
+  to {
+    transform-origin: 20px 20px;
+    transform: rotate(calc(-90deg + 365deg));
+  }
+}
+
