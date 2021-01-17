@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/simple-clock/static/css/main.59965420.chunk.css",
-    "main.js": "/simple-clock/static/js/main.ed6e44c4.chunk.js",
-    "main.js.map": "/simple-clock/static/js/main.ed6e44c4.chunk.js.map",
+    "main.js": "/simple-clock/static/js/main.a446fbda.chunk.js",
+    "main.js.map": "/simple-clock/static/js/main.a446fbda.chunk.js.map",
     "runtime-main.js": "/simple-clock/static/js/runtime-main.1ad81463.js",
     "runtime-main.js.map": "/simple-clock/static/js/runtime-main.1ad81463.js.map",
-    "static/js/2.3fe7eb0d.chunk.js": "/simple-clock/static/js/2.3fe7eb0d.chunk.js",
-    "static/js/2.3fe7eb0d.chunk.js.map": "/simple-clock/static/js/2.3fe7eb0d.chunk.js.map",
+    "static/js/2.17023550.chunk.js": "/simple-clock/static/js/2.17023550.chunk.js",
+    "static/js/2.17023550.chunk.js.map": "/simple-clock/static/js/2.17023550.chunk.js.map",
     "index.html": "/simple-clock/index.html",
     "static/css/main.59965420.chunk.css.map": "/simple-clock/static/css/main.59965420.chunk.css.map",
-    "static/js/2.3fe7eb0d.chunk.js.LICENSE.txt": "/simple-clock/static/js/2.3fe7eb0d.chunk.js.LICENSE.txt"
+    "static/js/2.17023550.chunk.js.LICENSE.txt": "/simple-clock/static/js/2.17023550.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1ad81463.js",
-    "static/js/2.3fe7eb0d.chunk.js",
+    "static/js/2.17023550.chunk.js",
     "static/css/main.59965420.chunk.css",
-    "static/js/main.ed6e44c4.chunk.js"
+    "static/js/main.a446fbda.chunk.js"
   ]
 }
