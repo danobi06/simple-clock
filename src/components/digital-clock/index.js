@@ -1,30 +1,56 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./index.css";
 
 const formatTime = (time, type) => {
   if (type === "H") {
-    return time < 12 ? "0" + time : time;
+    const nextHour = time % 12 || 12;
+    return nextHour < 10 ? "0" + nextHour : nextHour;
   }
-  if (type === "M" || type === "S") {
-    return time < 10 ? "0" + time : time;
-  }
-  return time;
+  return time < 10 ? "0" + time : time;
 };
 
 const Component = () => {
-  const currentTime = new Date();
-  const hour = formatTime(currentTime.getHours() % 12, "H");
-  const minute = formatTime(currentTime.getMinutes(), "M");
-  const second = formatTime(currentTime.getSeconds(), "S");
-  const period = currentTime.getHours() < 12 ? "AM" : "PM";
+  const [hours, setHours] = useState();
+  const [minutes, setMinutes] = useState();
+  const [seconds, setSeconds] = useState();
+  const period = useMemo(() => (hours < 12 ? "AM" : "PM"), [hours]);
 
+  useEffect(() => {
+    const currentTime = new Date();
+    setHours(currentTime.getHours());
+    setMinutes(currentTime.getMinutes());
+    setSeconds(currentTime.getSeconds());
+
+    const interval = setInterval(() => {
+      setSeconds((currSecond) => {
+        const nextSeconds = currSecond + 1;
+        if (nextSeconds === 60) {
+          setMinutes((currMinute) => {
+            const nextMinute = currMinute + 1;
+            if (nextMinute === 60) {
+              setHours((currHour) => {
+                return (currHour + 1) % 24;
+              });
+            }
+            return nextMinute % 60;
+          });
+        }
+        return nextSeconds % 60;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  //prettier-ignore
   return (
     <svg
       className="container-digital"
       viewBox="0 0 40 40"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <text x="20" y="20">{`${hour}: ${minute}: ${second}: ${period}`}</text>
+      <text x="20" y="20">
+        {`${formatTime(hours, "H")}: ${formatTime(minutes)}: ${formatTime(seconds)}: ${period}`}
+      </text>
     </svg>
   );
 };
